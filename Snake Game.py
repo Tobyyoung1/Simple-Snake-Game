@@ -26,7 +26,7 @@ head.color("black")
 head.penup() #does not draw
 head.goto(0,0) #starts in center of screen
 head.direction= "stop"
-
+head.next_direction= "stop"
 
 #Snake Food
 food= turtle.Turtle()
@@ -59,7 +59,8 @@ def go_up():
     Returns: None
     '''
     if head.direction != "down":
-        head.direction = "up"
+        #head.direction = "up"
+        head.next_direction = "up"
 
 def go_down():
     '''
@@ -67,7 +68,8 @@ def go_down():
     Returns: None
     '''
     if head.direction != "up":
-        head.direction = "down"
+        #head.direction = "down"
+        head.next_direction = "down"
 
 def go_left():
     '''
@@ -75,15 +77,16 @@ def go_left():
     Returns: None
     '''
     if head.direction != "right":
-        head.direction = "left"
-    
+        #head.direction = "left"
+        head.next_direction= "left"
 def go_right():
     '''
     Points head right
     Returns: None
     '''
     if head.direction != "left":
-        head.direction = "right"
+        #head.direction = "right"
+        head.next_direction= "right"
     
 def move():
     '''
@@ -133,6 +136,8 @@ while True:
         time.sleep(1)           #briefly pauses game
         head.goto(0,0)          #moves head to origin
         head.direction= "stop"  #stops the head to give player time to breathe
+        head.next_direction= "stop"
+
         #Hide the segments
         for segment in segments:
             segment.goto(1000,1000) #Moves segment off screen because can't figure out how to delete segement
@@ -188,7 +193,8 @@ while True:
         x = head.xcor()
         y = head.ycor()
         segments[0].goto(x,y)
-        
+    
+    head.direction= head.next_direction
     move()
     
     #Check for a collision with body
@@ -197,6 +203,7 @@ while True:
             time.sleep(1)           #briefly pauses game
             head.goto(0,0)          #moves head to origin
             head.direction= "stop"  #stops the head to give player time to breathe
+            head.next_direction= "stop"
             #Hide the segments
             for segment in segments:
                 segment.goto(1000,1000) #Moves segment off screen because can't figure out how to delete segement
