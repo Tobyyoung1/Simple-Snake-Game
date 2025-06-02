@@ -14,7 +14,7 @@ high_score = 0
 #set up the screen
 wn= turtle.Screen()
 wn.title("Snake Game by Toby")
-wn.bgcolor("green")
+wn.bgcolor("DarkOliveGreen3")
 wn.setup(width=600, height=600)
 wn.tracer(0) #turns off screen updates
 
@@ -22,7 +22,7 @@ wn.tracer(0) #turns off screen updates
 head= turtle.Turtle()
 head.speed(0) #animation speed of the turtle module (moves as fast as possible [0])
 head.shape("square")
-head.color("black")
+head.color("coral4")
 head.penup() #does not draw
 head.goto(0,0) #starts in center of screen
 head.direction= "stop"
@@ -32,7 +32,7 @@ head.next_direction= "stop"
 food= turtle.Turtle()
 food.speed(0) #animation speed of the turtle module (moves as fast as possible [0])
 food.shape("circle")
-food.color("red")
+food.color("red3")
 food.penup() #does not draw
 food.goto(20*random.randint(-14,14),20*random.randint(-14,14)) #starting position
 
@@ -40,7 +40,7 @@ food.goto(20*random.randint(-14,14),20*random.randint(-14,14)) #starting positio
 food2= turtle.Turtle()
 food2.speed(0) #animation speed of the turtle module (moves as fast as possible [0])
 food2.shape("circle")
-food2.color("yellow")
+food2.color("red1")
 food2.penup() #does not draw
 food2.goto(20*random.randint(-14,14),20*random.randint(-14,14)) #starting position
 #Ensures starting position is not on top of other food
@@ -55,11 +55,11 @@ segments= []
 pen= turtle.Turtle()
 pen.speed(0)
 pen.shape("square")
-pen.color("white")
+pen.color("DarkSlateGray")
 pen.penup()
 pen.hideturtle()
 pen.goto(0, 260)
-pen.write("Score: 0    High Score: 0", align="center", font=("Courier", 24, "normal"))
+pen.write("Score: 0    High Score: 0", align="center", font=("Courier", 24, "bold"))
 
 
 
@@ -160,7 +160,7 @@ while True:
         #Reset the score
         score= 0
         pen.clear()
-        pen.write("Score: {}    High Score: {}".format(score,high_score), align="center", font=("Courier", 24, "normal"))
+        pen.write("Score: {}    High Score: {}".format(score,high_score), align="center", font=("Courier", 24, "bold"))
         
         #Reset delay
         delay = 0.1
@@ -179,7 +179,7 @@ while True:
          new_segment= turtle.Turtle()
          new_segment.speed(0) #animation speed
          new_segment.shape("square")
-         new_segment.color("grey")
+         new_segment.color("coral2")
          new_segment.penup()
          segments.append(new_segment)
          
@@ -189,7 +189,7 @@ while True:
              high_score = score
         
          pen.clear()
-         pen.write("Score: {}    High Score: {}".format(score,high_score), align="center", font=("Courier", 24, "normal"))
+         pen.write("Score: {}    High Score: {}".format(score,high_score), align="center", font=("Courier", 24, "bold"))
          
          #shorten the delay
          delay -= 0.001
@@ -204,7 +204,7 @@ while True:
          new_segment= turtle.Turtle()
          new_segment.speed(0) #animation speed
          new_segment.shape("square")
-         new_segment.color("grey")
+         new_segment.color("coral1")
          new_segment.penup()
          segments.append(new_segment)
          
@@ -214,7 +214,7 @@ while True:
              high_score = score
         
          pen.clear()
-         pen.write("Score: {}    High Score: {}".format(score,high_score), align="center", font=("Courier", 24, "normal"))
+         pen.write("Score: {}    High Score: {}".format(score,high_score), align="center", font=("Courier", 24, "bold"))
          
          #shorten the delay
          delay -= 0.001
@@ -253,7 +253,7 @@ while True:
             #Reset the score
             score= 0
             pen.clear()
-            pen.write("Score: {}    High Score: {}".format(score,high_score), align="center", font=("Courier", 24, "normal"))
+            pen.write("Score: {}    High Score: {}".format(score,high_score), align="center", font=("Courier", 24, "bold"))
             
             #reset delay
             delay = 0.1
